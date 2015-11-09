@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery-latest.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //var v = $(".div1").find("input").eq(1).val();
+            //console.log(v);
+           // $(".div1 div p").children("span").next().eq(1).css("background","#faa");
+            $(".div1 div p").children("span").next().eq(1).css("background","#faa");
+            $(".div2").find("span").next().eq(1).css("background","#afa");
+            //$(".div2").next().children().children().children().eq(3).css("background","#aaf");
+            $(".div2").next().css("background","#aaf");
+            var div1 = $(".div1 div p").children("span").next().next().nextUntil("span").val();
+            var div2 = $(".div2").find("span").next().next().nextUntil("span").val();
+            var div3 = $(".div2").next().children().children().children().next().next().nextUntil("span").val();
+            console.log(div1);
+            console.log(div2);
+            console.log(div3);
+        });
+    </script>
+</head>
+
+<body>
+    <div class="div1">
+        <div>
+            <p>
+                <span></span>
+                <input type="text" value="1">
+                <span></span>
+                <input type="text" value="2">
+                <span></span>
+                <input type="text" value="3">
+            </p>
+        </div>
+    </div>
+     <div class="div2">
+        <div>
+            <p>
+                <span></span>
+                <input type="text" value="3">
+                <span></span>
+                <input type="text" value="4">
+                <span></span>
+                <input type="text" value="5">
+            </p>
+        </div>
+    </div>
+     <div class="div3">
+        <div>
+            <p>
+                <span></span>
+                <input type="text" value="6">
+                <span></span>
+                <input type="text" value="7">
+                <span></span>
+                <input type="text" value="8">
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
