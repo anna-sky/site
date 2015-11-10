@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slider</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+        .block{
+            display: block;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+    <script src="jquery-latest.min.js"></script>
+    <script>
+        $(document).ready(function(){
+//          $(".slider__item img[src*='_big']").hide();
+            $(".slider__item img[src*='_big']").addClass("hidden");
+            
+            $(".slider__item").each(function(index){
+                
+                $(this).children(":first-child").each(function(){
+                    $(this).click(function(){
+                    
+                    $(this).next("img[src*='_big']").each(function(){
+                        index = 1;
+                        
+                        console.log (index);
+                        if (index == $(this).index){
+                            $(this).removeClass("hidden");
+                        }
+                        else {
+                            $(this).addClass("hidden");
+                        }
+                    });
+                });
+                });
+            });
+            
+            
+        });
+    </script>
+</head>
+<body>
+<h1>Headline </h1>
+   <ul class="slider">
+       <li class="slider__item">
+           <img src="img-1.jpg" alt="">
+           <img src="img-1_big.jpg" alt="">
+       </li>
+       <li class="slider__item">
+           <img src="img-2.jpg" alt="">
+           <img src="img-2_big.jpg" alt="">
+       </li>
+       <li class="slider__item">
+           <img src="img-3.jpg" alt="">
+           <img src="img-3_big.jpg" alt="">
+       </li>
+       <li class="slider__item">
+           <img src="img-4.jpg" alt="">
+           <img src="img-4_big.jpg" alt="">
+       </li>
+       <li class="slider__item">
+           <img src="img-5.jpg" alt="">
+           <img src="img-5_big.jpg" alt="">
+       </li>
+       <li class="slider__item">
+           <img src="img-6.jpg" alt="">
+           <img src="img-6_big.jpg" alt="">
+       </li>
+       <li class="slider__item">
+           <img src="img-7.jpg" alt="">
+           <img src="img-7_big.jpg" alt="">
+       </li>
+       <li class="slider__item">
+           <img src="img-8.jpg" alt="">
+           <img src="img-8_big.jpg" alt="">
+       </li>
+   </ul>
+</body>
+</html>
